@@ -6,3 +6,5 @@ class StorePicker extends React.Component {
         return <p>Hello</p>
     }
 }
+
+render (<StorePicker/>, document.querySelector('#main'));
