@@ -3,7 +3,8 @@ import { render } from 'react-dom';
 import './css/style.css';
 
 //components
-import StorePicker from './components/StorePicker';
+import App from './components/App';
+// import StorePicker from './components/StorePicker';
 
 
-render (<StorePicker/>, document.querySelector('#main'));
+render (<App/>, document.querySelector('#main'));
