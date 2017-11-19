@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 //Style Sheets
 import './css/style.css';
@@ -14,11 +14,11 @@ import NotFound from './components/NotFound';
 //Router
 const Root = () => (
   <BrowserRouter>
-    <div>
+    <Switch>
         <Route path="/" exact component={StorePicker} />
         <Route path="/store/:storeId" component={App} />
         <Route component={NotFound}/>
-    </div>
+    </Switch>
   </BrowserRouter>
 )
 
