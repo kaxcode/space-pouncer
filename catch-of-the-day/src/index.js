@@ -1,23 +1,25 @@
 import React from 'react';
-import { render } from 'react-dom'
-import { BrowserRouter as Router, Route, Miss } from 'react-router-dom'
+import { render } from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom'
+
+//Style Sheets
 import './css/style.css';
 
-//components
+// Components
 import App from './components/App';
 import StorePicker from './components/StorePicker';
 import NotFound from './components/NotFound';
 
-const Root = () => {
-  return (
-    <Router>
-      <div>
-        <Route exact path="/" component={StorePicker}/>
-        <Route path="/store/:storeId" component={App}/>
-        <Miss component={NotFound} />
-      </div>
-    </Router>
-  )
-}
 
-render(<Root/>, document.querySelector('#main'));
+//Router
+const Root = () => (
+  <BrowserRouter>
+    <div>
+        <Route path="/" exact component={StorePicker} />
+        <Route path="/store/:storeId" component={App} />
+        <Route component={NotFound}/>
+    </div>
+  </BrowserRouter>
+)
+
+render(<Root />, document.querySelector('#main'));
