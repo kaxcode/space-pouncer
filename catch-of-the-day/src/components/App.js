@@ -14,6 +14,19 @@ class App extends React.Component {
         };
     }
 
+    addFish(fish) {
+        //copy of state
+        const fishes = {...this.state.fishes};
+        
+        // add fish
+        const timestamp = Date.now();
+        fishes[`fish-${timestamp}`] = fish;
+
+        //set state
+        this.setState({ fishes });
+    }
+
+
     render() {
         return (
         <div className="catch-of-the-day">
