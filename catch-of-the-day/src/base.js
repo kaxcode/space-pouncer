@@ -1,4 +1,4 @@
-import Reabase from 're-base';
+import Rebase from 're-base';
 
 const base = Rebase.createClass({
     apiKey: "AIzaSyDTjdtpLtsxsxotYpbz7u5BV3VhrI_-cZ8",
