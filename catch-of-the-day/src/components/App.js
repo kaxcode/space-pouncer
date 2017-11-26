@@ -32,6 +32,10 @@ class App extends React.Component {
     base.removeBinding(this.ref);
   }
 
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem(`order-${this.props.match.params.storeId}`, JSON.stringify(nextState.order));
+  }
+
   addFish(fish) {
     // update our state
     const fishes = {...this.state.fishes};
@@ -70,7 +74,11 @@ class App extends React.Component {
             }
           </ul>
         </div>
-        <Order fishes={this.state.fishes} order={this.state.order}/>
+        <Order 
+          fishes={this.state.fishes} 
+          order={this.state.order} 
+          params={this.props.match.params}
+        />
         <Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
       </div>
     )
