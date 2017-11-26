@@ -26,6 +26,16 @@ class App extends React.Component {
       context: this,
       state: 'fishes'
     });
+
+    // check if there is any order in localStorage
+    const localStorageRef = localStorage.getItem(`order-${this.props.match.params.storeId}`);
+    
+    if(localStorageRef) {
+      // update our App component's order state
+      this.setState({
+        order: JSON.parse(localStorageRef)
+      });
+    }
   }
 
   componentWillUnmount() {
