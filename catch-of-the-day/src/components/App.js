@@ -66,10 +66,10 @@ class App extends React.Component {
     this.setState({ fishes });
   }
   
-  removeFromOrder(key) {
-    const order = {...this.state.order};
-    delete order[key];
-    this.setState({ order });
+  removeFish(key) {
+    const fishes = {...this.state.fishes};
+    fishes[key] = null;
+    this.setState({ fishes });
   }
 
   loadSamples() {
