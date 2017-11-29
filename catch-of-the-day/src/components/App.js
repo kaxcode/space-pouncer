@@ -125,4 +125,8 @@ class App extends React.Component {
   }
 }
 
+Header.propTypes = {
+  tagline: React.PropTypes.string.isRequired
+}
+
 export default App;
