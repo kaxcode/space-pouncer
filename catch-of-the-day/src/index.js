@@ -14,7 +14,7 @@ const repo = `/${window.location.pathname.split('/')['1']}`
 
 //Router
 const Root = () => (
-  <BrowserRouter basename="/shiny-fishy/">
+  <BrowserRouter basename={repo}>
     <Switch>
         <Route path="/" exact component={StorePicker} />
         <Route path="/store/:storeId" component={App} />
