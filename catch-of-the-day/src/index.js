@@ -10,10 +10,11 @@ import App from './components/App';
 import StorePicker from './components/StorePicker';
 import NotFound from './components/NotFound';
 
+const repo = `/${window.location.pathname.split('/')['1']}`
 
 //Router
 const Root = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/shiny-fishy/">
     <Switch>
         <Route path="/" exact component={StorePicker} />
         <Route path="/store/:storeId" component={App} />
